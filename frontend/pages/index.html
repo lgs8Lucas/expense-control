@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Control</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header class="pg-header">
+        <h1>Expense Control</h1>
+    </header>
+    <main>
+        <!--Entradas, atual, saidas-->
+        <section class="cards">
+            <div class="cardIn">
+                <span class="desc">Ganho</span>
+                <div class="value">
+                    <span id="span-value-in">R$00</span>
+                </div>
+            </div>
+            <div class="cardBalance">
+                <span class="desc">Saldo</span>
+                <div class="value">
+                    <span id="span-value-balance">R$00</span>
+                </div>
+            </div>
+            <div class="cardOut">
+                <span class="desc">Gasto</span>
+                <div class="value">
+                    <span id="span-value-out">R$00</span>
+                </div>
+            </div>
+        </section>
+        <!--Tabela-->
+        <section>
+            <table id="table-expenses">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th colspan="2"><b id="openModalAdd">+</b></th>
+                    </tr>
+                </thead>
+                <tbody id="table-expenses-content"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modalAdd" class="invisible">
+        <h2>Adicionar uma nova despesa</h2>
+        <form method="post" id="formAdd" name="formAdd">
+            <label for="inpDesc">Descrição:</label>
+            <input type="text" id="inpDesc" required name="resum_expense">
+            <label for="inpData">Data:</label>
+            <input type="date" id="inpData" required name="date_expense">
+            <label for="inpValue">Valor:</label>
+            <input type="number" id="inpValue" required name="value_expense" step="0.01">
+            <label for="inpObs">Observação:</label>
+            <textarea id="inpObs" cols="30" rows="10" name="detailed_expense"></textarea>
+            <div class="inline">
+                <button type="submit" id="btnSendAdd">Enviar</button>
+                <button type="reset" id="btnResetAdd">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="../scripts/getPageScript.js"></script>
+</html>
